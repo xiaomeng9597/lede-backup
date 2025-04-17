@@ -660,7 +660,7 @@
 			rockchip,pins = <0 RK_PC3 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
 		pcie30x2_reset_h: pcie30x2-reset-h {
-			rockchip,pins = <0 RK_PC4 RK_FUNC_GPIO &pcfg_pull_none>;
+			rockchip,pins = <4 RK_PC4 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
 		pcie2x1_reset_h: pcie2x1-reset-h {
 			rockchip,pins = <3 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
@@ -721,7 +721,6 @@
 &pcie3x1 {
 		vpcie3v3-supply = <&vcc3v3_pcie>;
 		reset-gpios = <&gpio0 RK_PC3 GPIO_ACTIVE_HIGH>;
-		rockchip,bifurcation;
 		num-lanes = <0x1>; /*可能不生效,但是拆分需要打补丁,如果是吧,打补丁*/
 		pinctrl-0 = <&pcie30x1_reset_h>;
 		status = "disabled";
@@ -730,9 +729,8 @@
 //fe280000
 &pcie3x2 {
 		vpcie3v3-supply = <&vcc3v3_pcie>;
-		reset-gpios = <&gpio0 RK_PC4 GPIO_ACTIVE_HIGH>;
+		reset-gpios = <&gpio4 RK_PC4 GPIO_ACTIVE_HIGH>;
 		status = "okay";
-		rockchip,bifurcation;
 		num-lanes = <0x2>;
 		pinctrl-0 = <&pcie30x2_reset_h>;
 };
