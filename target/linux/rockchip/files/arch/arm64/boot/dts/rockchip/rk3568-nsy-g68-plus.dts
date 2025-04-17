@@ -721,7 +721,6 @@
 &pcie3x1 {
 		vpcie3v3-supply = <&vcc3v3_pcie>;
 		reset-gpios = <&gpio0 RK_PC3 GPIO_ACTIVE_HIGH>;
-		rockchip,bifurcation;
 		num-lanes = <0x1>; /*可能不生效,但是拆分需要打补丁,如果是吧,打补丁*/
 		pinctrl-0 = <&pcie30x1_reset_h>;
 		status = "okay";
@@ -732,7 +731,6 @@
 		vpcie3v3-supply = <&vcc3v3_pcie>;
 		reset-gpios = <&gpio0 RK_PC6 GPIO_ACTIVE_HIGH>;
 		status = "okay";
-		rockchip,bifurcation;
 		num-lanes = <0x1>;
 		pinctrl-0 = <&pcie30x2_reset_h>;
 };
